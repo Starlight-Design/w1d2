@@ -1,12 +1,20 @@
-puts "Enter square footage of sign!"
-sfoot = gets.chomp.to_i
+def cost()
+  puts "How many colours do you want for your sign?"
+  colours = gets.chomp.to_i
 
-puts "How many colours for the sign?"
-clr = gets.chomp.to_i
+  puts "What is the height of your sign?"
+  sign_h = gets.chomp.to_i
 
-sfootcost = sfoot * 15
-clrcost = clr >= 2 ? clr * 15 : clr * 10
+  puts "What is the length of your sign?"
+  sign_l = gets.chomp.to_i
 
-total = (sfootcost + clrcost) * 1.15
+  size = sign_h * sign_l
+  size_cost = size * 15
+  clr_cost = colours <= 2 ? colours * 10 : colours * 15
+  total = (clr_cost + size_cost) * 1.15
 
-puts "Your total is $#{total.round(2)}. Have a nice day!"
+  puts "Your total cost is $#{total.round(2)}"
+
+end
+
+cost
