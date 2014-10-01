@@ -1,20 +1,11 @@
-def cost()
-  puts "How many colours do you want for your sign?"
-  colours = gets.chomp.to_i
+def calc(size,colours)
 
-  puts "What is the height of your sign?"
-  sign_h = gets.chomp.to_i
+  sqft = size
+  clrs = colours
 
-  puts "What is the length of your sign?"
-  sign_l = gets.chomp.to_i
-
-  size = sign_h * sign_l
-  size_cost = size * 15
-  clr_cost = colours <= 2 ? colours * 10 : colours * 15
-  total = (clr_cost + size_cost) * 1.15
-
-  puts "Your total cost is $#{total.round(2)}"
-
+    s_cost = sqft * 15
+    c_cost = clrs <= 2 ? clrs * 10 : clrs * 15
+    total = (c_cost + s_cost) * 1.15
 end
 
-cost
+puts calc(17,4)
